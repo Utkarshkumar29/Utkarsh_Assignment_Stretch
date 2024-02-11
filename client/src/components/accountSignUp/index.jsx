@@ -42,13 +42,13 @@ const AccountSignUp=()=>{
         }
         try {
             if(id){
-                const response=await axios.put(`/updateAccount/${id}`,data)
+                const response=await axios.put(`https://bytive-backend-0vpg.onrender.com/updateAccount/${id}`,data)
                 console.log(response)
                 if(response.status===200){
                     setRedirect(true)
                 }
             }
-            const response=await axios.post('/accountSignUp',data)
+            const response=await axios.post('https://bytive-backend-0vpg.onrender.com/accountSignUp',data)
             console.log(response)
             if(response.status===200){
                 setRedirect(true)
@@ -60,7 +60,7 @@ const AccountSignUp=()=>{
 
     const userInfo=async()=>{
         try {
-            const response=await axios.get('/user')
+            const response=await axios.get('https://bytive-backend-0vpg.onrender.com/user')
             const data=response.data
             setName(data.name)
             setEmail(data.email)

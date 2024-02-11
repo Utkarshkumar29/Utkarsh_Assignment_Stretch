@@ -14,7 +14,7 @@ const Login=()=>{
                 email,
                 password
             }
-            const response=await axios.post('/login', data)
+            const response=await axios.post('https://bytive-backend-0vpg.onrender.com/login', data)
             console.log(response.status)
             if(response.status===404){
                 alert('Email not found')

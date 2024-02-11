@@ -14,7 +14,7 @@ const LandingPage=()=>{
 
     const fetchAccounts=async()=>{
         try {
-            const response=await axios.get('/accounts')
+            const response=await axios.get('https://bytive-backend-0vpg.onrender.com/accounts')
             const data=response.data
             setAccounts(data)
             console.log(response.data)
@@ -25,7 +25,7 @@ const LandingPage=()=>{
 
     const userInfo=async()=>{
         try {
-            const response=await axios.get('/user')
+            const response=await axios.get('https://bytive-backend-0vpg.onrender.com/user')
             const data=response.data
             setUser(data)
             setSession(true)
@@ -36,7 +36,7 @@ const LandingPage=()=>{
 
     const handleDelete=async()=>{
         try {
-            const response=await axios.delete(`/delete/${user._id}`)
+            const response=await axios.delete(`https://bytive-backend-0vpg.onrender.com/delete/${user._id}`)
             if(response.status===200){
                 alert('Profile Deleted Successfully!')
                 userInfo()
